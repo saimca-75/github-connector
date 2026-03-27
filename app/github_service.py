@@ -6,7 +6,7 @@ headers = {
     "Accept": "application/vnd.github+json"
 }
 
-# 🔹 1. Get authenticated user repos (public + private)
+# 1. Get authenticated user repos (public + private)
 def get_my_repositories(visibility):
     visibility = visibility.lower()
     url = f"{BASE_URL}/user/repos"
@@ -17,7 +17,7 @@ def get_my_repositories(visibility):
 
     repos = response.json()
 
-        # 🔥 Apply filtering
+        #  Apply filtering
     if visibility == "public":
         repos = [r for r in repos if not r["private"]]
     elif visibility == "private":
@@ -33,7 +33,7 @@ def get_my_repositories(visibility):
     ]
 
 
-# 🔹 2. Get public repos of any user
+# 2. Get public repos of any user
 def get_public_repositories(username):
     url = f"{BASE_URL}/users/{username}/repos"
     response = requests.get(url, headers=headers)
@@ -44,7 +44,7 @@ def get_public_repositories(username):
     return response.json()
 
 
-# 🔹 3. Create issue
+# 3. Create issue
 def create_issue(owner, repo, title, body):
     url = f"{BASE_URL}/repos/{owner}/{repo}/issues"
 
@@ -60,7 +60,7 @@ def create_issue(owner, repo, title, body):
 
     return response.json()
 
-# 🔹 3. list issues
+# 4. list issues
 def list_issues(owner, repo):
     url = f"{BASE_URL}/repos/{owner}/{repo}/issues"
     response = requests.get(url, headers=headers)
