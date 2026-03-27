@@ -3,7 +3,9 @@ from app.github_service import list_issues
 from app.github_service import (
     get_my_repositories,
     get_public_repositories,
-    create_issue
+    create_issue,
+    get_commits,
+    create_pull_request
 )
 
 router = APIRouter()
@@ -27,3 +29,13 @@ def create_issue_api(owner: str, repo: str, title: str, body: str):
 @router.get("/list-issues")
 def list_issues_api(owner: str, repo: str):
     return list_issues(owner, repo)
+
+# get commits
+@router.get("/commits")
+def get_commits_api(owner: str, repo: str):
+    return get_commits(owner, repo)
+
+# create a pull request
+@router.post("/create-pr")
+def create_pr(owner: str, repo: str, title: str, body: str, head: str, base: str):
+    return create_pull_request(owner, repo, title, body, head, base)
