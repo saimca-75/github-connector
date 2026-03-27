@@ -114,7 +114,7 @@ def get_commits(owner, repo):
     ]
 
 
-# 5. create a Pull request
+# 6. create a Pull request
 def create_pull_request(owner, repo, title, body, head, base):
     url = f"{BASE_URL}/repos/{owner}/{repo}/pulls"
 
