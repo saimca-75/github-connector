@@ -112,7 +112,7 @@ Provide repository owner and repo name to fetch issues.
 GET /commits?owner=<owner>&repo=<repo>
 
 ```
-Fetch commit history of a repository.
+Use this to Fetch commit history of a repository.
 
 ---
 
@@ -122,7 +122,7 @@ Fetch commit history of a repository.
 POST /create-pr
 
 ```
-Create a pull request from one branch to another.
+Used to Create a pull request from one branch to another.
 
 **Parameters:**
 - owner → GitHub username  
