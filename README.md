@@ -1,8 +1,3 @@
-Here’s your content properly converted into **clean Markdown format** 👇
-
----
-
-```markdown
 # GitHub Cloud Connector
 
 ## Objective
@@ -140,11 +135,11 @@ Create a pull request from one branch to another.
 
 ---
 
-## Notes
+## Note
 
 - `.env` file is not included for security  
 - Token must have `repo` permission  
 - Pull request requires two different branches (head ≠ base)
+---
 ```
 
----
